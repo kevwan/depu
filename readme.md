@@ -5,7 +5,7 @@
 [![Release](https://img.shields.io/github/v/release/kevwan/depu.svg?style=flat-square)](https://github.com/kevwan/depu)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Why depu is needed
+## Why to write depu
 
 When I maintain [go-zero](https://github.com/zeromicro/go-zero), I often need to check if any updates on my dependencies.
 
