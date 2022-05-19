@@ -1,7 +1,6 @@
 # depu
 
 [![Go](https://github.com/kevwan/depu/workflows/Go/badge.svg?branch=main)](https://github.com/kevwan/depu/actions)
-[![codecov](https://codecov.io/gh/kevwan/depu/branch/main/graph/badge.svg)](https://codecov.io/gh/kevwan/depu)
 [![Go Report Card](https://goreportcard.com/badge/github.com/kevwan/depu)](https://goreportcard.com/report/github.com/kevwan/depu)
 [![Release](https://img.shields.io/github/v/release/kevwan/depu.svg?style=flat-square)](https://github.com/kevwan/depu)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,9 +12,7 @@ For Go devs, we often need to check if any updates on my dependencies. Some adva
 - known bugs or security issues get fixed
 - not breaking for deprecated usages on must upgrade
 
-And `go list` lists all the dependent packages for both direct and indirect usages, and `Indirect` fields always telling true. For details, check this issue:
-
-https://github.com/golang/go/issues/40364
+And `go list` lists all the dependent packages for both direct and indirect usages, and `Indirect` fields always telling true. For details, check this issue: https://github.com/golang/go/issues/40364
 
 ## Design ideas
 
@@ -39,6 +36,7 @@ $ depu
 
 Results look like:
 
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/1918356/169304283-1b09a434-0034-48c5-ab72-6c2c8d10e946.png">
 
 ## Give a Star! ⭐
 
