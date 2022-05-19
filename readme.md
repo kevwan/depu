@@ -7,7 +7,9 @@
 
 ## Why depu is needed
 
-For Go devs, we often need to check if any updates on my dependencies. Some advantages on keeping up-to-date:
+When I maintain [go-zero](https://github.com/zeromicro/go-zero), I often need to check if any updates on my dependencies.
+
+Some advantages on keeping up-to-date:
 - get more features
 - known bugs or security issues get fixed
 - not breaking for deprecated usages on must upgrade
