@@ -24,7 +24,7 @@ type (
 )
 
 func getDepPackages() ([]Module, error) {
-	output, err := getCmdOutput("go", "list", "-u", "-m", "-json", "all")
+	output, err := getCmdOutput("go", "list", "-u", "-m", "-json", "-mod=readonly", "all")
 	if err != nil {
 		return nil, err
 	}
