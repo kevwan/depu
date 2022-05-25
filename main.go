@@ -1,25 +1,35 @@
 package main
 
 import (
-	"fmt"
 	"os"
+	"os/exec"
+	"time"
 
+	"github.com/briandowns/spinner"
+	"github.com/fatih/color"
 	"github.com/olekukonko/tablewriter"
 )
 
 func main() {
+	spin := spinner.New(spinner.CharSets[14], 100*time.Millisecond)
+	spin.Suffix = " Checking for updates..."
+	spin.Start()
+
 	directs, err := getDirectModules()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "parseGoMod: %v\n", err)
+		spin.Stop()
+		processError("parseGoMod", err)
 		return
 	}
 
 	modules, err := getDepPackages()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "parseModules: %v\n", err)
+		spin.Stop()
+		processError("parseModules", err)
 		return
 	}
 
+	spin.Stop()
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetHeader([]string{"Package", "Current", "Latest", "GoVersion"})
 	table.SetBorder(false)
@@ -51,4 +61,14 @@ func contains(list []string, str string) bool {
 	}
 
 	return false
+}
+
+func processError(action string, err error) {
+	writer := color.New(color.FgRed)
+	if e, ok := err.(*exec.ExitError); ok {
+		writer.Fprintf(os.Stderr, "%s: %s", action, string(e.Stderr))
+		os.Exit(e.ExitCode())
+	} else {
+		writer.Fprintf(os.Stderr, "%s: %s\n", action, err.Error())
+	}
 }
