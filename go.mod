@@ -2,11 +2,13 @@ module github.com/kevwan/depu
 
 go 1.18
 
-require github.com/olekukonko/tablewriter v0.0.5
+require (
+	github.com/briandowns/spinner v1.18.1
+	github.com/fatih/color v1.7.0
+	github.com/olekukonko/tablewriter v0.0.5
+)
 
 require (
-	github.com/briandowns/spinner v1.18.1 // indirect
-	github.com/fatih/color v1.7.0 // indirect
 	github.com/mattn/go-colorable v0.1.2 // indirect
 	github.com/mattn/go-isatty v0.0.8 // indirect
 	github.com/mattn/go-runewidth v0.0.13 // indirect
