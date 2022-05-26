@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"time"
@@ -30,9 +31,8 @@ func main() {
 	}
 
 	spin.Stop()
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Package", "Current", "Latest", "GoVersion"})
-	table.SetBorder(false)
+
+	var tableRows [][]string
 	for _, mod := range modules {
 		if mod.Update == nil {
 			continue
@@ -42,14 +42,23 @@ func main() {
 			continue
 		}
 
-		table.Append([]string{
+		tableRows = append(tableRows, []string{
 			mod.Path,
 			mod.Version,
 			mod.Update.Version,
 			mod.GoVersion,
 		})
 	}
-	table.Render()
+
+	if len(tableRows) == 0 {
+		fmt.Println("\U0001f4ab\033[1;32m Complete!\033[0m All of your dependencies are up to date.")
+	} else {
+		table := tablewriter.NewWriter(os.Stdout)
+		table.SetHeader([]string{"Package", "Current", "Latest", "GoVersion"})
+		table.SetBorder(false)
+		table.AppendBulk(tableRows)
+		table.Render()
+	}
 }
 
 // contains checks if str is in list.
