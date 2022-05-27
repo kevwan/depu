@@ -51,8 +51,8 @@ func main() {
 	}
 
 	if len(tableRows) == 0 {
-		awesome := color.New(color.FgHiGreen, color.Bold).Sprint("Awesome!")
-		fmt.Printf("\U0001f4ab %s All of your dependencies are up-to-date.\n", awesome)
+		awesome := color.New(color.FgHiGreen, color.Bold).Sprint("✔ Awesome!")
+		fmt.Printf(" %s All of your dependencies are up-to-date.\n", awesome)
 	} else {
 		table := tablewriter.NewWriter(os.Stdout)
 		table.SetHeader([]string{"Package", "Current", "Latest", "GoVersion"})
