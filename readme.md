@@ -36,9 +36,14 @@ In the directory of `go.mod`, run the following command:
 $ depu
 ```
 
-Results look like:
+Results look like below if there are available updates:
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/1918356/169304283-1b09a434-0034-48c5-ab72-6c2c8d10e946.png">
+
+Results looks like below if no updates:
+
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/1918356/170682231-26a8b67b-5921-447d-b0b2-b8f3909a568e.png">
+
 
 ## Give a Star! ⭐
 
