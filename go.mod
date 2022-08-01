@@ -3,7 +3,7 @@ module github.com/kevwan/depu
 go 1.18
 
 require (
-	github.com/briandowns/spinner v1.18.1
+	github.com/briandowns/spinner v1.19.0
 	github.com/fatih/color v1.13.0
 	github.com/olekukonko/tablewriter v0.0.5
 )
